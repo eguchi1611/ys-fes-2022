@@ -1,0 +1,74 @@
+.cover {
+  width: 100%;
+  height: 100vh;
+  & > * {
+    position: absolute;
+  }
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.background {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  animation: bg_anim 500ms linear 4s both;
+}
+
+.text {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 90vw;
+  filter: drop-shadow(2px 2px 2px #0097e0);
+}
+
+.text path {
+  animation-name: stroke_anim, fill_anim;
+  animation-duration: 500ms, 1s;
+  animation-timing-function: linear;
+  animation-fill-mode: backwards, forwards;
+  @for $index from 1 through 36 {
+    &:nth-child(#{$index}) {
+      animation-delay: #{$index * 100}ms, 4s;
+    }
+  }
+
+  stroke: #fff;
+  fill: transparent;
+  stroke-width: 0.4px;
+  stroke-dasharray: 100px;
+}
+
+@keyframes stroke_anim {
+  0% {
+    stroke-dashoffset: 100px;
+  }
+  100% {
+    stroke-dashoffset: 0px;
+  }
+}
+
+@keyframes fill_anim {
+  100% {
+    fill: #fff;
+    stroke-width: 0px;
+  }
+}
+
+@keyframes bg_anim {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
