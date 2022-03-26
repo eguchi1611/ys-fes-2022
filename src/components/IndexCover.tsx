@@ -5,7 +5,7 @@ import BackgroundImage from "../assets/images/background.jpg";
 function IndexCover() {
   return (
     <div className={classes.cover}>
-      <img className={classes.image} src={BackgroundImage} alt="バックグラウンド" />
+      {/* <img className={classes.image} src={BackgroundImage} alt="バックグラウンド" /> */}
       <div className={classes.background}></div>
       <svg
         className={classes.text}
