@@ -1,6 +1,14 @@
-.cover {
+.wrapper {
   width: 100%;
   height: 100vh;
+}
+
+.cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  animation: bg_anim 1s ease-in 5s both;
 }
 
 .image {
