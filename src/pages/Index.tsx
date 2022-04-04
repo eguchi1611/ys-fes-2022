@@ -5,6 +5,7 @@ import IndexCover from "../components/IndexCover";
 
 import BackgroundHS from "../assets/images/バナー_高校文化祭.jpg";
 import BackgroundJHS from "../assets/images/バナー_中学文化祭.jpg";
+import { Link } from "react-router-dom";
 
 function Index() {
   return (
@@ -13,10 +14,14 @@ function Index() {
       <IndexCover />
       <div className="container">
         <div className="m-4">
-          <Banner image={BackgroundHS} />
+          <Link to="/hs">
+            <Banner image={BackgroundHS} />
+          </Link>
         </div>
         <div className="m-4">
-          <Banner image={BackgroundJHS} />
+          <Link to="/jhs">
+            <Banner image={BackgroundJHS} />
+          </Link>
         </div>
       </div>
     </div>
