@@ -1,4 +1,7 @@
 import Link from "next/link";
+import styles from "styles/Header.module.scss";
+import c from "classnames";
+import { useLogin } from "hooks/AuthHook";
 
 export default function Header() {
   return (
@@ -7,20 +10,26 @@ export default function Header() {
       <nav className="my-auto mr-4 hidden md:block">
         <ul className="flex">
           {menulist.map(({ text, path }) => (
-            <li key={text} className="px-2 py-1 hover:bg-slate-500">
+            <li key={text} className={c("px-1", "px-2", styles.item)}>
               <Link href={path}>{text}</Link>
             </li>
           ))}
         </ul>
       </nav>
-      {LoginButton}
+      <LoginButton />
     </div>
   );
 }
 
-const LoginButton = (
-  <button className="rounded-full bg-sky-400 px-4 py-3">ログイン</button>
-);
+const LoginButton = () => {
+  const { signIn } = useLogin();
+
+  return (
+    <button className="rounded-full bg-sky-400 px-4 py-3" onClick={signIn}>
+      ログイン
+    </button>
+  );
+};
 
 const menulist = [
   { text: "HOME", path: "/" },

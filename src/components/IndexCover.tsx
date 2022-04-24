@@ -6,7 +6,7 @@ export default function IndexCover() {
   return (
     <div className="relative h-screen">
       <Image src="/background.jpg" layout="fill" objectFit="cover" />
-      <div className="absolute top-0 left-0 h-full w-full bg-black opacity-30" />
+      <div className="absolute top-0 left-0 h-full w-full bg-black opacity-25" />
       {/* <div className="absolute bottom-8 left-0 right-0 flex justify-center">
         <div className={c("text-4xl text-white", styles.scroll)}>SCROLL</div>
       </div> */}
