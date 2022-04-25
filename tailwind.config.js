@@ -1,9 +1,6 @@
 module.exports = {
-  content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    fontFamily: {
-      sans: ["Noto Sans JP", "sans-serif"],
-    },
     extend: {},
   },
   plugins: [],
