@@ -1,18 +1,21 @@
+import BasicPage from "components/BasicPage";
+import Layout from "layouts/BasicLayout";
+import AuthProvider from "providers/AuthProvider";
 import React from "react";
 import { Route, Routes } from "react-router";
-import Header from "./components/Header";
-import Index from "./pages";
-import styles from "styles/App.module.scss";
-import classNames from "classnames";
+import Index from "./pages/Index";
 
 function App() {
   return (
-    <div className={classNames("min-h-screen", styles.box)}>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Index />} />
-      </Routes>
-    </div>
+    <AuthProvider>
+      <Layout>
+        <Routes>
+          <Route index element={<Index />} />
+          <Route path="/:type/:page" element={<BasicPage />} />
+          <Route path="*" element={<p>404 not found</p>} />
+        </Routes>
+      </Layout>
+    </AuthProvider>
   );
 }
 
