@@ -11,7 +11,7 @@ function Layout({ children }: Props): ReactElement {
       <div className="fixed w-full">
         <Header />
       </div>
-      <main className="pt-20">{children}</main>
+      <div className="pt-16">{children}</div>
     </>
   );
 }
