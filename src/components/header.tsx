@@ -1,5 +1,5 @@
 function Header() {
-  return <header>header</header>;
+  return <div className="underline">header</div>;
 }
 
 export default Header;

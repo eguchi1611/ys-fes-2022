@@ -8,8 +8,10 @@ type Props = {
 function Layout({ children }: Props): ReactElement {
   return (
     <div>
-      <Header />
-      <main>{children}</main>
+      <header className="fixed">
+        <Header />
+      </header>
+      <main className="pt-16">{children}</main>
     </div>
   );
 }
