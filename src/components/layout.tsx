@@ -7,12 +7,12 @@ type Props = {
 
 function Layout({ children }: Props): ReactElement {
   return (
-    <div>
-      <header className="fixed">
+    <>
+      <div className="fixed w-full">
         <Header />
-      </header>
+      </div>
       <main className="pt-16">{children}</main>
-    </div>
+    </>
   );
 }
 
