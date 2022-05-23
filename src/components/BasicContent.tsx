@@ -27,7 +27,7 @@ function BasicContent({ title, subtitle, desc, img, links }: Props) {
           width={720}
           height={1080}
           layout="responsive"
-          className="rounded-lg"
+          className="z-10 rounded-lg"
         />
         <div
           className={classNames(
