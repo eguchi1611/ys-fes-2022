@@ -9,10 +9,10 @@ const links = [
 
 function Header() {
   return (
-    <header className="flex items-center px-4 py-2">
+    <header className="flex items-center bg-white px-4 py-2">
       <Link href="/">
         <div className="relative mr-auto h-12 w-32 cursor-pointer">
-          <Image objectFit="contain" layout="fill" src="/logo.jpg" priority />
+          <Image objectFit="contain" layout="fill" src="/logo.jpg" />
         </div>
       </Link>
       <nav>
