@@ -40,7 +40,12 @@ function BasicContent({ title, subtitle, desc, img, links }: Props) {
             <ul className="font-serif leading-normal">
               {links.map(({ url, text }) => (
                 <li key={text}>
-                  <a className="hover:underline" href={url} target="_blank">
+                  <a
+                    className="hover:underline"
+                    href={url}
+                    rel="noreferrer noopener"
+                    target="_blank"
+                  >
                     {text}
                   </a>
                 </li>

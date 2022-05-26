@@ -11,7 +11,7 @@ const Home: NextPage = () => {
           <div className="relative max-w-lg flex-1 before:block before:pt-[56.25%]">
             <iframe
               className="absolute top-0 left-0 h-full w-full"
-              src="https://www.youtube.com/embed/IzedJQANHPc"
+              src="https://www.youtube.com/embed/yg8BIotkbTs"
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

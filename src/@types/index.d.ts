@@ -5,6 +5,7 @@ type PageProps = {
 type Group = {
   description: string;
   subtitle: string;
+  banner: string;
   movies: string[];
   urls: string[];
 };

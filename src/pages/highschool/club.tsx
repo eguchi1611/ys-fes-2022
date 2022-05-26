@@ -10,7 +10,7 @@ function Club(props: Props) {
       const elements = document.querySelectorAll(".content");
 
       elements.forEach((elem) => {
-        const margin = 500;
+        const margin = 200;
         if (window.innerHeight > elem.getBoundingClientRect().top + margin) {
           elem.classList.add(SubStyles.show);
         }
@@ -26,9 +26,11 @@ function Club(props: Props) {
         <BasicContent
           key={index}
           title={name}
-          subtitle={data.subtitle}
+          subtitle={`${(index + 1).toString().padStart(2, "0")}. ${
+            data.subtitle
+          }`}
           desc={data.description}
-          img="https://firebasestorage.googleapis.com/v0/b/ys-fes-2022.appspot.com/o/banners%2FSAMPLE.jpg?alt=media&token=9f9078cd-3b29-4377-837e-0cc7de5a905a"
+          img={data.banner}
           links={[
             { url: "#", text: "全面展望①" },
             { url: "#", text: "全面展望②" },
