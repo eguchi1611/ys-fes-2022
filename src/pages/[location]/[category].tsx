@@ -1,10 +1,18 @@
 import axios from "axios";
+import {
+  GetStaticPaths,
+  GetStaticPathsResult,
+  GetStaticPropsContext,
+} from "next";
+import { ParsedUrlQuery } from "querystring";
 import { useEffect } from "react";
 import BasicContent from "../../components/BasicContent";
 import SubStyles from "../../styles/BasicContent.module.scss";
 
-type Props = PageProps;
-function Club(props: Props) {
+type Props = {
+  data: PageProps;
+};
+function Club({ data }: Props) {
   useEffect(() => {
     function scrollAnim() {
       const elements = document.querySelectorAll(".content");
@@ -22,7 +30,7 @@ function Club(props: Props) {
 
   return (
     <main className="grid gap-4 bg-white px-8 lg:grid-cols-2">
-      {Object.entries(props).map(([name, data], index) => (
+      {Object.entries(data).map(([name, data], index) => (
         <BasicContent
           key={index}
           title={name}
@@ -44,12 +52,44 @@ function Club(props: Props) {
 }
 
 export default Club;
-export async function getStaticProps() {
+
+type StaticProps = {
+  category: string;
+  location: string;
+};
+export async function getStaticProps({
+  params,
+}: GetStaticPropsContext<StaticProps>) {
   const res = await axios.get(
-    "https://script.google.com/macros/s/AKfycbykY0npWBOmpSNjAa7PrpT02hAQ_rgo9qbEye3OR9faAEen5nz5kSZdDieuPUxqC0mE/exec?loc=HS_CLUB"
+    `https://script.google.com/macros/s/AKfycbykY0npWBOmpSNjAa7PrpT02hAQ_rgo9qbEye3OR9faAEen5nz5kSZdDieuPUxqC0mE/exec?location=${params?.location}&category=${params?.category}`
   );
 
   return {
-    props: res.data,
+    props: { data: res.data },
+  };
+}
+
+interface Params extends ParsedUrlQuery {
+  location: string;
+  category: string;
+}
+
+export async function getStaticPaths(): Promise<GetStaticPathsResult<Params>> {
+  const paths = [
+    ["highschool", "1"],
+    ["highschool", "2"],
+    ["highschool", "3"],
+    ["highschool", "club"],
+    ["juniorhighschool", "club"],
+  ].map(([location, category]) => ({
+    params: {
+      location,
+      category,
+    },
+  }));
+
+  return {
+    paths,
+    fallback: false,
   };
 }

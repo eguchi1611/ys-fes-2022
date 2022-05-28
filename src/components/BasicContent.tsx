@@ -22,13 +22,15 @@ function BasicContent({ title, subtitle, desc, img, links }: Props) {
       )}
     >
       <div className={classNames("relative sm:w-5/12", styles.imageWrapper)}>
-        <Image
-          src={img}
-          width={720}
-          height={1080}
-          layout="responsive"
-          className="z-10 rounded-lg"
-        />
+        {img && (
+          <Image
+            src={img}
+            width={1080}
+            height={1920}
+            layout="responsive"
+            className="z-10 rounded-lg shadow"
+          />
+        )}
         <div
           className={classNames(
             "absolute top-0 left-0 h-full w-full",
