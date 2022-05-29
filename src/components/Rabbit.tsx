@@ -1,8 +1,11 @@
 import axios from "axios";
+import dynamic from "next/dynamic";
 import Image from "next/image";
-import { ChangeEvent, FormEvent, useState } from "react";
-import { useToggleState } from "../hooks/ToggleState";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { AiOutlineReload } from "react-icons/ai";
+import { Image as KonvaImage, Layer, Rect, Stage } from "react-konva";
+import useImage from "use-image";
+import { useToggleState } from "../hooks/ToggleState";
 
 function Rebbit() {
   const [state, toggle] = useToggleState();
@@ -35,13 +38,35 @@ function Rebbit() {
     setQuestion(event.target.value);
   };
 
+  const [image1] = useImage("/rabbits/walk1.png");
+  const [image2] = useImage("/rabbits/walk2.png");
+  const [image, setImage] = useState(image1);
+  const [, setCount] = useState(0);
+
+  useEffect(() => {
+    const images = [image1, image2];
+    console.log(images);
+
+    const timer = setInterval(() => {
+      setCount((current) => {
+        setImage(images[current % images.length]);
+        console.log(current % images.length);
+
+        return current + 1;
+      });
+    }, 100);
+    return () => {
+      clearInterval(timer);
+    };
+  }, [image1, image2]);
+
   return (
     <div>
       <div className="w-64">
         {!(state && !response) || (
           <form onSubmit={onSubmit}>
             <input
-              className="w-full rounded p-2"
+              className="w-full rounded p-2 shadow"
               placeholder="なにが知りたいのー？"
               value={question}
               onChange={onChange}
@@ -56,14 +81,12 @@ function Rebbit() {
             </div>
           </div>
         )}
-        <div className="flex flex-row-reverse">
-          <Image
-            src="/rabbit1.png"
-            width={96}
-            height={96}
-            className="cursor-pointer"
-            onClick={toggle}
-          />
+        <div className="flex cursor-pointer flex-row-reverse" onClick={toggle}>
+          <Stage width={96} height={96}>
+            <Layer>
+              <KonvaImage image={image} width={96} height={96} />
+            </Layer>
+          </Stage>
         </div>
       </div>
     </div>

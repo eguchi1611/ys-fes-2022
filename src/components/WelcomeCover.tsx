@@ -61,7 +61,7 @@ function WelcomeCover() {
     <div className={classNames(classes.wrapper, { [classes.anim]: accessed })}>
       <div
         className="absolute top-0 left-0 h-full w-full bg-black"
-        style={{ opacity: scroll }}
+        style={{ opacity: Math.min(scroll, 0.5) }}
       ></div>
       <div className={classes.message}>SCROLL</div>
       <div className={classes.cover} />

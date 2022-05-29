@@ -1,6 +1,31 @@
-import classNames from "classnames";
 import Image from "next/image";
-import styles from "../styles/BasicContent.module.scss";
+import ContentTemplate from "./ContentTemplate";
+
+type PropsThumbnail = {
+  url?: string;
+  title?: string;
+};
+function Thumbnail({ url, title }: PropsThumbnail) {
+  if (!url) {
+    return (
+      <div className="aspect-[9/16] bg-white p-4 shadow">
+        画像が見つかりません
+      </div>
+    );
+  }
+  return (
+    <div className="rounded-lg shadow">
+      <Image
+        alt={title}
+        src={url}
+        width={1080}
+        height={1920}
+        layout="responsive"
+        className="rounded-lg"
+      />
+    </div>
+  );
+}
 
 type Props = {
   title: string;
@@ -15,55 +40,29 @@ type Props = {
 
 function BasicContent({ title, subtitle, desc, img, links }: Props) {
   return (
-    <div
-      className={classNames(
-        "content relative mb-24 flex-row-reverse justify-around sm:flex",
-        styles.anim
-      )}
-    >
-      <div className={classNames("relative sm:w-5/12", styles.imageWrapper)}>
-        {img && (
-          <Image
-            src={img}
-            width={1080}
-            height={1920}
-            layout="responsive"
-            className="z-10 rounded-lg shadow"
-          />
-        )}
-        <div
-          className={classNames(
-            "absolute top-0 left-0 h-full w-full",
-            styles.overlay
-          )}
-        >
-          <div className="absolute top-0 left-0 h-full w-full rounded-lg bg-black opacity-20"></div>
-          <div className="absolute bottom-0 right-0 w-full p-4 text-right text-white">
-            <ul className="font-serif leading-normal">
-              {links.map(({ url, text }) => (
-                <li key={text}>
-                  <a
-                    className="hover:underline"
-                    href={url}
-                    rel="noreferrer noopener"
-                    target="_blank"
-                  >
-                    {text}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div className="-mt-16 px-4 text-neutral-600 sm:mt-0">
-        <div className={classNames(styles.title, "mb-8 mt-8 font-serif")}>
-          <h2 className="text-md pt-16 sm:pt-8">{subtitle}</h2>
+    <ContentTemplate
+      title={
+        <div className="font-serif">
+          <h2 className="text-md pt-8">{subtitle}</h2>
           <h1 className="pb-8 text-2xl font-bold sm:text-3xl">{title}</h1>
         </div>
-        <p className="text-md sm:max-w-xs">{desc}</p>
-      </div>
-    </div>
+      }
+      media={<Thumbnail url={img} title={title} />}
+      content={
+        <>
+          <p className="text-md sm:max-w-xs">{desc}</p>
+          <ul className="mt-2 text-lg text-blue-500 underline">
+            {links.map(({ url, text }) => (
+              <li key={text}>
+                <a href={url} rel="noopener noreferrer" target="_blank">
+                  {text}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </>
+      }
+    />
   );
 }
 

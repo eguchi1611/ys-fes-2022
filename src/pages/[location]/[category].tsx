@@ -1,9 +1,6 @@
 import axios from "axios";
-import {
-  GetStaticPaths,
-  GetStaticPathsResult,
-  GetStaticPropsContext,
-} from "next";
+import classNames from "classnames";
+import { GetStaticPathsResult, GetStaticPropsContext } from "next";
 import { ParsedUrlQuery } from "querystring";
 import { useEffect } from "react";
 import BasicContent from "../../components/BasicContent";
@@ -18,7 +15,7 @@ function Club({ data }: Props) {
       const elements = document.querySelectorAll(".content");
 
       elements.forEach((elem) => {
-        const margin = 200;
+        const margin = 100;
         if (window.innerHeight > elem.getBoundingClientRect().top + margin) {
           elem.classList.add(SubStyles.show);
         }
@@ -29,23 +26,22 @@ function Club({ data }: Props) {
   }, []);
 
   return (
-    <main className="grid gap-4 bg-white px-8 lg:grid-cols-2">
+    <main className="grid gap-4 bg-white px-2 pt-12 sm:px-8 lg:grid-cols-2">
       {Object.entries(data).map(([name, data], index) => (
-        <BasicContent
-          key={index}
-          title={name}
-          subtitle={`${(index + 1).toString().padStart(2, "0")}. ${
-            data.subtitle
-          }`}
-          desc={data.description}
-          img={data.banner}
-          links={[
-            { url: "#", text: "全面展望①" },
-            { url: "#", text: "全面展望②" },
-            { url: "#", text: "全面展望③" },
-            { url: "#", text: "ジオラマ紹介" },
-          ]}
-        />
+        <div className={classNames(SubStyles.anim, "content")} key={index}>
+          <BasicContent
+            title={name}
+            subtitle={`${(index + 1).toString().padStart(2, "0")}. ${
+              data.subtitle
+            }`}
+            desc={data.description}
+            img={data.banner}
+            links={data.movies.map((movieTitle, index) => ({
+              text: movieTitle,
+              url: data.urls[index],
+            }))}
+          />
+        </div>
       ))}
     </main>
   );
