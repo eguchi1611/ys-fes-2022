@@ -17,9 +17,7 @@ function Layout({ children }: Props): ReactElement {
         <Header />
       </div>
       <div className="pt-16">{children}</div>
-      <div className="fixed bottom-0 right-0 z-10 p-2">
-        <Rabbit />
-      </div>
+      <Rabbit />
     </div>
   );
 }

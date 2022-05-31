@@ -1,5 +1,11 @@
 import axios from "axios";
-import { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import {
+  ChangeEvent,
+  CSSProperties,
+  FormEvent,
+  useEffect,
+  useState,
+} from "react";
 import { AiOutlineReload } from "react-icons/ai";
 import { Image as KonvaImage, Layer, Stage } from "react-konva";
 import useImage from "use-image";
@@ -58,8 +64,19 @@ function Rebbit() {
     };
   }, [image1, image2]);
 
+  const [rabbitStyle, setRabbitStyle] = useState<CSSProperties>();
+
+  const coord = [
+    ["10%", "40%"],
+    ["60%", "10%"],
+  ];
+
+  useEffect(() => {
+    setRabbitStyle({ bottom: 0, right: 0, transform: "scale(-1, 1)" });
+  }, []);
+
   return (
-    <div>
+    <div className="fixed z-10 p-2" style={rabbitStyle}>
       <div className="w-64">
         {!(state && !response) || (
           <form onSubmit={onSubmit}>
@@ -79,10 +96,10 @@ function Rebbit() {
             </div>
           </div>
         )}
-        <div className="flex cursor-pointer flex-row-reverse" onClick={toggle}>
-          <Stage width={96} height={96}>
+        <div className="flex cursor-pointer " onClick={toggle}>
+          <Stage width={90} height={110}>
             <Layer>
-              <KonvaImage image={image} width={96} height={96} />
+              <KonvaImage image={image} width={90} height={110} />
             </Layer>
           </Stage>
         </div>
