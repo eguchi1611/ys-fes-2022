@@ -72,12 +72,12 @@ function Rebbit() {
   ];
 
   useEffect(() => {
-    setRabbitStyle({ bottom: 0, right: 0, transform: "scale(-1, 1)" });
+    setRabbitStyle({ bottom: 0, right: 0, transform: "scale(1, 1)" });
   }, []);
 
   return (
     <div className="fixed z-10 p-2" style={rabbitStyle}>
-      <div className="w-64">
+      <div className="">
         {!(state && !response) || (
           <form onSubmit={onSubmit}>
             <input
