@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 function useAccessCheck() {
   const [access, setAccess] = useState(false);

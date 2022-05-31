@@ -15,7 +15,6 @@ function Content({ text, url, subtitle, title }: ContentProps) {
     <ContentTemplate
       title={
         <div className="font-serif">
-          {/* <h2 className="text-md pt-16 sm:pt-8">{subtitle}</h2> */}
           <h1 className="pt-8 pb-8 text-2xl font-bold sm:text-3xl">{title}</h1>
         </div>
       }
@@ -34,7 +33,7 @@ function Content({ text, url, subtitle, title }: ContentProps) {
         </div>
       }
       content={
-        <div className="text-blue-400">
+        <div className="rounded-lg bg-blue-400 p-2 text-center text-xl text-white">
           <Link href={url}>{text}</Link>
         </div>
       }
@@ -50,8 +49,7 @@ const Home: NextPage = () => {
         <ContentTemplate
           title={
             <div className="font-serif">
-              <h2 className="text-md pt-16 sm:pt-8">生徒会長</h2>
-              <h1 className="pb-8 text-2xl font-bold sm:text-3xl">
+              <h1 className="py-8 text-2xl font-bold sm:text-3xl">
                 生徒会長の挨拶
               </h1>
             </div>

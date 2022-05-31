@@ -1,9 +1,7 @@
 import axios from "axios";
-import dynamic from "next/dynamic";
-import Image from "next/image";
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { AiOutlineReload } from "react-icons/ai";
-import { Image as KonvaImage, Layer, Rect, Stage } from "react-konva";
+import { Image as KonvaImage, Layer, Stage } from "react-konva";
 import useImage from "use-image";
 import { useToggleState } from "../hooks/ToggleState";
 
@@ -54,7 +52,7 @@ function Rebbit() {
 
         return current + 1;
       });
-    }, 100);
+    }, 200);
     return () => {
       clearInterval(timer);
     };
