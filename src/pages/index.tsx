@@ -15,8 +15,8 @@ function Content({ text, url, subtitle, title }: ContentProps) {
     <ContentTemplate
       title={
         <div className="font-serif">
-          <h2 className="text-md pt-16 sm:pt-8">{subtitle}</h2>
-          <h1 className="pb-8 text-2xl font-bold sm:text-3xl">{title}</h1>
+          {/* <h2 className="text-md pt-16 sm:pt-8">{subtitle}</h2> */}
+          <h1 className="pt-8 pb-8 text-2xl font-bold sm:text-3xl">{title}</h1>
         </div>
       }
       media={
@@ -46,7 +46,7 @@ const Home: NextPage = () => {
   return (
     <div className="-mt-16">
       <WelcomeCover />
-      <div className="bg-white px-2 pt-8">
+      <div className="mx-auto bg-white px-2 pt-8">
         <ContentTemplate
           title={
             <div className="font-serif">
@@ -66,7 +66,20 @@ const Home: NextPage = () => {
               allowFullScreen
             ></iframe>
           }
-          content={<div>sss</div>}
+          content={
+            <div>
+              <p className="mb-2">
+                今年の文化祭のテーマは「青春を取り戻せ！〜今こそみんなで一つに〜」です。　
+              </p>
+              <p className="mb-2">
+                コロナ禍で様々な活動が制限されてきましたが、待ちに待った松陰祭が開催されます！
+              </p>
+              <p className="mb-2">
+                沢山のクラブや団体が、松陰祭を盛り上げるために創意工夫を凝らし、想いを込めて準備してきました。
+              </p>
+              みなさん、今しか出来ない青春を全力で楽しみましょう！
+            </div>
+          }
         />
         <Content
           text="中学クラブページへ"
