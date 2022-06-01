@@ -1,17 +1,21 @@
-import axios from "axios";
 import { useState } from "react";
 
 type Props = {
   dataset: Dataset[];
 };
 function ShortMovies({ dataset }: Props) {
-  const [index, setIndex] = useState(1);
+  const [index, setIndex] = useState(10000);
 
   const add = (num: number) => {
-    setIndex((i) => (i += num));
+    setIndex((i) => {
+      if ((num < 0 && i >= 0) || num > 0) {
+        return (i += num);
+      }
+      return i;
+    });
   };
 
-  console.log((index % (dataset.length - 1)) - 1);
+  const num = dataset.length % index;
 
   return (
     <div className="mb-16 bg-gray-100 px-2 py-8">
@@ -21,12 +25,12 @@ function ShortMovies({ dataset }: Props) {
           <p>高校の各クラブの文化祭の内容が１５秒でわかります！</p>
           <p>どのクラブを見るか決めるときに役立ててください</p>
         </section>
-        <div className="aspect-[9/16]">
-          <div>{dataset[(index % (dataset.length - 1)) + 1].name}</div>
+        <div className="sm:max-w-40 aspect-[9/16]">
+          <div>{dataset[index % (dataset.length - 1)].name}</div>
           <iframe
             className="h-full w-full"
             src={`https://www.youtube.com/embed/${
-              dataset[(index % (dataset.length - 1)) + 1].url
+              dataset[index % (dataset.length - 1)].url
             }`}
             title="YouTube video player"
             frameBorder="0"
