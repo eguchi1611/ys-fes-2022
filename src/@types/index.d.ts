@@ -9,3 +9,8 @@ type Group = {
   movies: string[];
   urls: string[];
 };
+
+type Dataset = {
+  name: string;
+  url: string;
+};

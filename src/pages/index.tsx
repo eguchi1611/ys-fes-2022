@@ -1,7 +1,9 @@
+import axios from "axios";
 import type { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import ContentTemplate from "../components/ContentTemplate";
+import ShortMovies from "../components/ShortMovies";
 import WelcomeCover from "../components/WelcomeCover";
 
 type ContentProps = {
@@ -44,11 +46,15 @@ function Content({ text, url, title, thumbnail, desc }: ContentProps) {
   );
 }
 
-const Home: NextPage = () => {
+type Props = {
+  dataset: Dataset[];
+};
+
+const Home: NextPage<Props> = ({ dataset }) => {
   return (
     <div className="-mt-16">
       <WelcomeCover />
-      <div className="mx-auto bg-white px-2 pt-8">
+      <div className="bg-white px-2 pt-8">
         <ContentTemplate
           title={
             <div className="font-serif">
@@ -78,8 +84,10 @@ const Home: NextPage = () => {
               <p className="mb-2">
                 沢山のクラブや団体が、松陰祭を盛り上げるために創意工夫を凝らし、想いを込めて準備してきました。
               </p>
-              みなさん、今しか出来ない青春を全力で楽しみましょう！
-              <p className="mb-2">第４２期高校生徒会長</p>
+              <p className="mb-2">
+                みなさん、今しか出来ない青春を全力で楽しみましょう！
+              </p>
+              <p>第４３期高校生徒会長</p>
             </div>
           }
         />
@@ -88,9 +96,10 @@ const Home: NextPage = () => {
           url="/juniorhighschool/club"
           title="中学クラブ"
           subtitle="Junior High School Club"
-          thumbnail="https://storage.googleapis.com/ys-fes-2022.appspot.com/%E3%83%90%E3%83%8A%E3%83%BC/中学ハナー.jpeg"
+          thumbnail="https://storage.googleapis.com/ys-fes-2022.appspot.com/%E3%83%90%E3%83%8A%E3%83%BC/%E4%B8%AD%E5%AD%A6%E3%83%8F%E3%82%99%E3%83%8A%E3%83%BC.jpeg"
           desc=""
         />
+        <ShortMovies dataset={dataset} />
         <Content
           text="高校クラブページへ"
           url="/highschool/club"
@@ -129,3 +138,13 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export async function getStaticProps() {
+  const res = await axios.get(
+    `https://script.google.com/macros/s/AKfycbykY0npWBOmpSNjAa7PrpT02hAQ_rgo9qbEye3OR9faAEen5nz5kSZdDieuPUxqC0mE/exec?shorts=true`
+  );
+
+  return {
+    props: { dataset: res.data },
+  };
+}

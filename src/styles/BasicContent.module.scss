@@ -3,11 +3,11 @@
   &::before {
     content: "";
     position: absolute;
-    width: calc(100% + 4rem);
+    width: calc(100% + 12px);
     height: 1px;
     background-color: darkgrey;
     z-index: 1;
-    left: -2rem;
+    left: -12px;
   }
 }
 

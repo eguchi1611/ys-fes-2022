@@ -59,10 +59,10 @@
   stroke-dasharray: 100px;
 
   animation-name: stroke_anim, fill_anim;
-  animation-duration: 1s, 1s;
+  animation-duration: 600ms, 1s;
   animation-timing-function: linear;
   animation-fill-mode: backwards, forwards;
-  @for $index from 1 through 36 {
+  @for $index from 1 through 37 {
     &:nth-child(#{$index}) {
       animation-delay: #{$index * 100}ms, 4s;
     }

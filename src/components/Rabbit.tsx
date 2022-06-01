@@ -54,8 +54,6 @@ function Rebbit() {
     const timer = setInterval(() => {
       setCount((current) => {
         setImage(images[current % images.length]);
-        console.log(current % images.length);
-
         return current + 1;
       });
     }, 200);
