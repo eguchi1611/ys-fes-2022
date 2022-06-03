@@ -113,7 +113,7 @@ const Home: NextPage<Props> = ({ dataset }) => {
           url="/highschool/1"
           title="高校１年"
           subtitle="High School 1"
-          thumbnail="https://storage.googleapis.com/ys-fes-2022.appspot.com/%E3%83%90%E3%83%8A%E3%83%BC/%E4%BB%AE%E3%83%8F%E3%82%99%E3%83%8A%E3%83%BC.png"
+          thumbnail="https://storage.googleapis.com/ys-fes-2022.appspot.com/%E3%83%90%E3%83%8A%E3%83%BC/高校１年.JPG"
           desc="高校１年生は、八千代松陰高等学校を紹介するCMを、クラスごとに工夫を凝らして制作しました。この学校の更なる魅力を発見できますよ！　ぜひご覧ください。"
         />
         <Content
@@ -121,7 +121,7 @@ const Home: NextPage<Props> = ({ dataset }) => {
           url="/highschool/2"
           title="高校２年"
           subtitle="High School 2"
-          thumbnail="https://storage.googleapis.com/ys-fes-2022.appspot.com/%E3%83%90%E3%83%8A%E3%83%BC/%E4%BB%AE%E3%83%8F%E3%82%99%E3%83%8A%E3%83%BC.png"
+          thumbnail="https://storage.googleapis.com/ys-fes-2022.appspot.com/%E3%83%90%E3%83%8A%E3%83%BC/高校２年.png"
           desc="私たち高校２年生は「世界を知る・世界に挑戦する」という学年テーマのもと各クラスでショートムービーを撮りました。いろいろな角度から考えた「世界」。お楽しみください！"
         />
         <Content
@@ -129,7 +129,7 @@ const Home: NextPage<Props> = ({ dataset }) => {
           url="/highschool/3"
           title="高校３年"
           subtitle="High School 3"
-          thumbnail="https://storage.googleapis.com/ys-fes-2022.appspot.com/%E3%83%90%E3%83%8A%E3%83%BC/%E4%BB%AE%E3%83%8F%E3%82%99%E3%83%8A%E3%83%BC.png"
+          thumbnail="https://storage.googleapis.com/ys-fes-2022.appspot.com/%E3%83%90%E3%83%8A%E3%83%BC/高校３年.jpeg"
           desc="高校3年生は「青春を取り戻せ！～〇〇つくってみた～」をテーマに各クラス個性豊かな動画を作成しました。一緒に青春しませんか？"
         />
       </div>
