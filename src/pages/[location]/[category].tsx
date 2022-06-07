@@ -26,24 +26,31 @@ function Club({ data }: Props) {
   }, []);
 
   return (
-    <main className="grid gap-4 bg-white px-2 pt-12 sm:px-8 lg:grid-cols-2">
-      {Object.entries(data).map(([name, data], index) => (
-        <div className={classNames(SubStyles.anim, "content")} key={index}>
-          <BasicContent
-            title={name}
-            subtitle={`${(index + 1).toString().padStart(2, "0")}. ${
-              data.subtitle
-            }`}
-            desc={data.description}
-            img={data.banner}
-            links={data.movies.map((movieTitle, index) => ({
-              text: movieTitle,
-              url: data.urls[index],
-            }))}
-          />
+    <>
+      {!Object.entries(data)[0][1].urls[0] && (
+        <div className="bg-white py-16 text-center text-xl">
+          動画の公開は終了しました。ご視聴ありがとうございました。
         </div>
-      ))}
-    </main>
+      )}
+      <main className="grid gap-4 bg-white px-2 pt-12 sm:px-8 lg:grid-cols-2">
+        {Object.entries(data).map(([name, data], index) => (
+          <div className={classNames(SubStyles.anim, "content")} key={index}>
+            <BasicContent
+              title={name}
+              subtitle={`${(index + 1).toString().padStart(2, "0")}. ${
+                data.subtitle
+              }`}
+              desc={data.description}
+              img={data.banner}
+              links={data.movies.map((movieTitle, index) => ({
+                text: movieTitle,
+                url: data.urls[index],
+              }))}
+            />
+          </div>
+        ))}
+      </main>
+    </>
   );
 }
 
@@ -61,7 +68,11 @@ export async function getStaticProps({
   );
 
   return {
-    props: { data: res.data },
+    props: {
+      data: {
+        ...res.data,
+      },
+    },
   };
 }
 

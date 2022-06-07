@@ -51,12 +51,21 @@ function BasicContent({ title, subtitle, desc, img, links }: Props) {
       content={
         <>
           <p className="text-md sm:max-w-xs">{desc}</p>
-          <ul className="mt-2 text-lg text-blue-500 underline">
+          <ul className="mt-2 text-lg underline ">
             {links.map(({ url, text }) => (
               <li key={text}>
-                <a href={url} rel="noopener noreferrer" target="_blank">
-                  {text}
-                </a>
+                {url ? (
+                  <a
+                    className="text-blue-500 "
+                    href={url}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    {text}
+                  </a>
+                ) : (
+                  <span className="line-through">{text}</span>
+                )}
               </li>
             ))}
           </ul>
