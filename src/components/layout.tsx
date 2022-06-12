@@ -10,7 +10,7 @@ type Props = {
 
 function Layout({ children }: Props) {
   return (
-    <div>
+    <>
       <div className="position-relative">
         <Header />
       </div>
@@ -20,7 +20,7 @@ function Layout({ children }: Props) {
       <div className="container-md">
         <Footer />
       </div>
-    </div>
+    </>
   );
 }
 

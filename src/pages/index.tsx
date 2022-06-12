@@ -1,65 +1,13 @@
 import type { NextPage } from "next";
-import Card from "../components/card";
+import Head from "next/head";
 
 const Home: NextPage = () => {
   return (
-    <div className="container-fluid">
-      <div className="row row-cols-1 row-cols-lg-2">
-        <div className="col">
-          <Card />
-        </div>
-        <div className="col">
-          <Card />
-        </div>
-        <div className="col">
-          <Card />
-        </div>
-        <div className="col">
-          <Card />
-        </div>
-        <div className="col">
-          <Card />
-        </div>
-        <div className="col">
-          <Card />
-        </div>
-        <div className="col">
-          <Card />
-        </div>
-        <div className="col">
-          <Card />
-        </div>
-        <div className="col">
-          <Card />
-        </div>
-        <div className="col">
-          <Card />
-        </div>
-        <div className="col">
-          <Card />
-        </div>
-        <div className="col">
-          <Card />
-        </div>
-        <div className="col">
-          <Card />
-        </div>
-        <div className="col">
-          <Card />
-        </div>
-        <div className="col">
-          <Card />
-        </div>
-        <div className="col">
-          <Card />
-        </div>
-        <div className="col">
-          <Card />
-        </div>
-      </div>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
+    <div>
+      <Head>
+        <title>八千代松陰文化祭</title>
+      </Head>
+      <p>index</p>
     </div>
   );
 };
