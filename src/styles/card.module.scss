@@ -11,6 +11,13 @@
   }
 }
 
+.subtitle {
+  counter-increment: count 1;
+  &::before {
+    content: counter(count, decimal-leading-zero) ". ";
+  }
+}
+
 .image {
   z-index: 1;
 
