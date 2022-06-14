@@ -10,17 +10,15 @@ type Props = {
 
 function Layout({ children }: Props) {
   return (
-    <>
-      <div className="position-relative">
-        <Header />
-      </div>
+    <div className="position-relative">
+      <Header />
       <div className={classNames(style.main, "min-vh-100 position-relative")}>
         {children}
       </div>
       <div className="container-md">
         <Footer />
       </div>
-    </>
+    </div>
   );
 }
 
