@@ -8,7 +8,12 @@ type Props = {
 
 function Card({ section }: Props) {
   return (
-    <div className="container-fluid font-serif mb-4 d-flex">
+    <div
+      className={classNames(
+        style.container,
+        "container-fluid font-serif mb-4 d-flex"
+      )}
+    >
       <div className={classNames(style.description, "flex-grow-1")}>
         <div className={classNames(style.title, "mt-4 mb-3")}>
           <div className="py-4">

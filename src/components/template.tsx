@@ -1,6 +1,6 @@
 import classNames from "classnames";
-import Card from "./card";
 import style from "../styles/template.module.scss";
+import Card from "./card";
 
 type Props = {
   sections: Section[];
