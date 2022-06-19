@@ -28,52 +28,30 @@ function Header() {
                 <a className="nav-link">ホーム</a>
               </Link>
             </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                role="button"
-                data-bs-toggle="dropdown"
-              >
-                中学
-              </a>
-              <ul className="dropdown-menu">
-                <li>
-                  <Link href="/juniorhighschool/club" passHref>
-                    <a className="dropdown-item">中学クラブ</a>
-                  </Link>
-                </li>
-              </ul>
+            <li className="nav-item">
+              <Link href="/juniorhighschool/club" passHref>
+                <a className="nav-link">中学クラブ</a>
+              </Link>
             </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                role="button"
-                data-bs-toggle="dropdown"
-              >
-                高校
-              </a>
-              <ul className="dropdown-menu">
-                <li>
-                  <Link href="/highschool/club" passHref>
-                    <a className="dropdown-item">高校クラブ</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/highschool/1st" passHref>
-                    <a className="dropdown-item">高校１年</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/highschool/2nd" passHref>
-                    <a className="dropdown-item">高校２年</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/highschool/3rd" passHref>
-                    <a className="dropdown-item">高校３年</a>
-                  </Link>
-                </li>
-              </ul>
+            <li className="nav-item">
+              <Link href="/highschool/club" passHref>
+                <a className="nav-link">高校クラブ</a>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link href="/highschool/1" passHref>
+                <a className="nav-link">高校１年</a>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link href="/highschool/2" passHref>
+                <a className="nav-link">高校２年</a>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link href="/highschool/3" passHref>
+                <a className="nav-link">高校３年</a>
+              </Link>
             </li>
           </ul>
         </div>
