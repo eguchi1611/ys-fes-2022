@@ -55,7 +55,7 @@ function Card({ section }: Props) {
             height={1920}
             layout="responsive"
             className="rounded"
-            alt="ギター部のサムネイル"
+            alt={`${section.title}のサムネイル`}
             priority
           />
         </div>
