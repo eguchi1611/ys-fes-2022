@@ -1,3 +1,7 @@
 .font-serif {
   font-family: "Noto Serif JP", serif;
 }
+
+.cursor-pointer {
+  cursor: pointer;
+}

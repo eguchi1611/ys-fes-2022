@@ -1,8 +1,23 @@
 import classNames from "classnames";
-import { ReactElement } from "react";
+import dynamic from "next/dynamic";
+import { ReactElement, useState } from "react";
 import style from "../styles/layout.module.scss";
+import Chat from "./chat";
 import Footer from "./footer";
 import Header from "./header";
+const SeishunRabbit = dynamic(() => import("./rabbit"), { ssr: false });
+
+function WrappedChat() {
+  const [visible, setVisible] = useState(false);
+  const toggle = () => {
+    setVisible((c) => !c);
+  };
+  if (visible) {
+    return <Chat handleClose={toggle} />;
+  } else {
+    return <SeishunRabbit handleClick={toggle} />;
+  }
+}
 
 type Props = {
   children: ReactElement;
@@ -17,6 +32,9 @@ function Layout({ children }: Props) {
       </div>
       <div className="container-md">
         <Footer />
+      </div>
+      <div className="position-fixed bottom-0 end-0" style={{ zIndex: 1 }}>
+        <WrappedChat />
       </div>
     </div>
   );
