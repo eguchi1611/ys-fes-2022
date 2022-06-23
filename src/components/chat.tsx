@@ -68,7 +68,7 @@ function Chat() {
         scroll();
       });
     }
-  }, []);
+  }, [setFocus]);
 
   return (
     <div className="modal fade" id="chatModal" tabIndex={-1}>
