@@ -66,7 +66,7 @@ function Text() {
   );
 }
 
-function welcome() {
+function Welcome() {
   const scroll = useScroll();
 
   const [background, setBackground] = useState(imageSet[0]);
@@ -82,7 +82,7 @@ function welcome() {
       })}
     >
       <div className={style.fullscreen}>
-        <Image src={background} layout="fill" objectFit="cover" />
+        <Image src={background} layout="fill" objectFit="cover" alt="背景" />
       </div>
       <div
         className={classNames("bg-black", style.fullscreen)}
@@ -95,4 +95,4 @@ function welcome() {
   );
 }
 
-export default welcome;
+export default Welcome;
