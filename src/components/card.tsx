@@ -36,13 +36,7 @@ function Card({ section }: Props) {
           <ul className="list-unstyled">
             {section.localUrls?.map((localUrl) => (
               <li key={localUrl.text}>
-                {localUrl.url ? (
-                  <Link href={localUrl.url}>{localUrl.text}</Link>
-                ) : (
-                  <span className="text-decoration-line-through">
-                    {localUrl.text}
-                  </span>
-                )}
+                <Link href={localUrl.url}>{localUrl.text}</Link>
               </li>
             ))}
             {section.movies?.map((movie) => (
