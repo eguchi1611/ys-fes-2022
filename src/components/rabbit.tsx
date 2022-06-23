@@ -35,6 +35,7 @@ function SeishunRabbit() {
           shadowBlur={5}
           shadowOffset={{ x: 3, y: 3 }}
           shadowOpacity={0.3}
+          alt="青春ラビット"
         />
       </Layer>
     </Stage>

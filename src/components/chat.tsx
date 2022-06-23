@@ -96,6 +96,7 @@ function Chat() {
                       style={{ transform: "scale(-1, 1)" }}
                       src="/images/rabbits/walking1.png"
                       height={42}
+                      alt="青春ラビット"
                     />
                   )}
                   <p
