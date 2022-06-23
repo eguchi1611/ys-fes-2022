@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import Image from "next/image";
+import Link from "next/link";
 import style from "../styles/card.module.scss";
 
 type Props = {
@@ -28,10 +29,23 @@ function Card({ section }: Props) {
             <h1 className="fs-2 mb-0 lh-1">{section.title}</h1>
           </div>
         </div>
-        <div className="mb-3 pe-2">{section.description}</div>
+        <div className="mb-3 pe-2 lh-lg" style={{ whiteSpace: "pre-wrap" }}>
+          {section.description}
+        </div>
         <div className="mb-3">
           <ul className="list-unstyled">
-            {section.movies.map((movie) => (
+            {section.localUrls?.map((localUrl) => (
+              <li key={localUrl.text}>
+                {localUrl.url ? (
+                  <Link href={localUrl.url}>{localUrl.text}</Link>
+                ) : (
+                  <span className="text-decoration-line-through">
+                    {localUrl.text}
+                  </span>
+                )}
+              </li>
+            ))}
+            {section.movies?.map((movie) => (
               <li key={movie.title}>
                 {movie.url ? (
                   <a href={movie.url} target="_blank" rel="noreferrer">
@@ -50,7 +64,7 @@ function Card({ section }: Props) {
       <div className={style.image}>
         <div className="shadow-sm bg-white">
           <Image
-            src={section.bannerUrl}
+            src={section.bannerUrl || "/images/banners/blank.jpg"}
             width={1080}
             height={1920}
             layout="responsive"
