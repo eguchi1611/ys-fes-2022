@@ -39,17 +39,17 @@ function Header() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link href="/highschool/1" passHref>
+              <Link href="/highschool/1st" passHref>
                 <a className="nav-link">高校１年</a>
               </Link>
             </li>
             <li className="nav-item">
-              <Link href="/highschool/2" passHref>
+              <Link href="/highschool/2nd" passHref>
                 <a className="nav-link">高校２年</a>
               </Link>
             </li>
             <li className="nav-item">
-              <Link href="/highschool/3" passHref>
+              <Link href="/highschool/3rd" passHref>
                 <a className="nav-link">高校３年</a>
               </Link>
             </li>
