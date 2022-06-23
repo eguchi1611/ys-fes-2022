@@ -1,5 +1,10 @@
 .message {
-  background-color: var(--bs-light);
   margin: 12px 8px;
   padding: 8px;
+  &.response {
+    background-color: #fcedc6;
+  }
+  &.request {
+    background-color: var(--bs-gray-200);
+  }
 }
