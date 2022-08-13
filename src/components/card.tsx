@@ -29,9 +29,7 @@ function Card({ section }: Props) {
             <h1 className="fs-2 mb-0 lh-1">{section.title}</h1>
           </div>
         </div>
-        <div className="mb-3 pe-2 lh-lg" style={{ whiteSpace: "pre-wrap" }}>
-          {section.description}
-        </div>
+        <div className="mb-3 pe-2 lh-lg">{section.description}</div>
         <div className="mb-3">
           <ul className="list-unstyled">
             {section.localUrls?.map((localUrl) => (

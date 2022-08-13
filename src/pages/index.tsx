@@ -1,7 +1,9 @@
+import classNames from "classnames";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Card from "../components/card";
 import Welcome from "../components/welcome";
+import style from "../styles/index.module.scss";
 
 const sections: Section[] = [
   {
@@ -60,10 +62,10 @@ const Home: NextPage = () => {
       <Head>
         <title>八千代松陰文化祭</title>
       </Head>
-      <div style={{ marginTop: "-4rem" }}>
+      <div className={style.welcome}>
         <Welcome />
       </div>
-      <div className="container-sm mt-4">
+      <div className={classNames("container-sm mt-4", style.container)}>
         {sections.map((section) => (
           <Card key={section.title} section={section} />
         ))}

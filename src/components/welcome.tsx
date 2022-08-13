@@ -72,7 +72,14 @@ function Welcome() {
   const [background, setBackground] = useState(imageSet[0]);
 
   useEffect(() => {
-    setBackground(imageSet[Math.floor(Math.random() * imageSet.length)]);
+    const change = () => {
+      setBackground(imageSet[Math.floor(Math.random() * imageSet.length)]);
+    };
+    change();
+    const timer = setInterval(change, 5 * 1000);
+    return () => {
+      clearInterval(timer);
+    };
   }, []);
 
   return (
@@ -82,7 +89,7 @@ function Welcome() {
       })}
     >
       <div className={style.fullscreen}>
-        <Image src={background} layout="fill" objectFit="cover" alt="背景" />
+        <Image src={background} layout="fill" objectFit="cover" alt="背景" />z
       </div>
       <div
         className={classNames("bg-black", style.fullscreen)}

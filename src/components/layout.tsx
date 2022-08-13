@@ -29,7 +29,9 @@ function Layout({ children }: Props) {
       <div className="container-md">
         <Footer />
       </div>
-      <div className="position-fixed bottom-0 end-0" style={{ zIndex: 1 }}>
+      <div
+        className={classNames("position-fixed bottom-0 end-0", style.rabbit)}
+      >
         <WrappedRabbit />
       </div>
       <Chat />

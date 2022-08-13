@@ -83,7 +83,7 @@ function Chat() {
             ></button>
           </div>
           <div className="modal-body" ref={chatWindowRef}>
-            <div style={{ height: 360, maxHeight: "80%" }}>
+            <div className={style.chat}>
               {messages.map(({ content, sender }, index) => (
                 <div
                   key={index}
@@ -93,7 +93,7 @@ function Chat() {
                 >
                   {sender === "request" || (
                     <img
-                      style={{ transform: "scale(-1, 1)" }}
+                      className={style.rabbit}
                       src="/images/rabbits/walking1.png"
                       height={42}
                       alt="青春ラビット"
@@ -133,66 +133,6 @@ function Chat() {
       </div>
     </div>
   );
-
-  /*
-  return (
-    <div className="card shadow-sm m-3" style={{ width: 360 }}>
-      <div className="card-header d-flex">
-        <div className="me-auto"></div>
-        <button
-          type="button"
-          className="btn-close"
-          onClick={handleClose}
-        ></button>
-      </div>
-      <div
-        className="card-body overflow-scroll"
-        ref={chatWindowRef}
-        style={{ height: 480 }}
-      >
-        {messages.map(({ content, sender }, index) => (
-          <div
-            key={index}
-            className={classNames("d-flex align-items-center", {
-              "flex-row-reverse": sender === "request",
-            })}
-          >
-            {sender === "request" || (
-              <img
-                style={{ transform: "scale(-1, 1)" }}
-                src="/images/rabbits/walking1.png"
-                height={42}
-              />
-            )}
-            <p
-              className={classNames(style.message, {
-                ["text-end"]: sender === "request",
-              })}
-            >
-              {content}
-            </p>
-          </div>
-        ))}
-      </div>
-      <form
-        className="card-footer bg-white input-group input-group-sm"
-        onSubmit={handleSubmit(onSubmit)}
-      >
-        <input
-          type="text"
-          className="form-control"
-          placeholder="知りたいことを入力してください"
-          autoComplete="off"
-          autoFocus
-          {...register("text")}
-        />
-        <button className="btn btn-outline-secondary" type="submit">
-          送信
-        </button>
-      </form>
-    </div>
-  );
-  */
 }
 
 export default Chat;

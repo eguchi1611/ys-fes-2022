@@ -8,3 +8,12 @@
     background-color: var(--bs-gray-200);
   }
 }
+
+.chat {
+  height: 360px;
+  max-height: 80%;
+}
+
+.rabbit {
+  transform: scale(-1, 1);
+}
