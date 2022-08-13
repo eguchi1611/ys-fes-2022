@@ -1,7 +1,7 @@
 import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import Template from "../../components/template";
-import { request } from "../../utils/sheet";
+import { request } from "../../lib/sheet";
 
 type Props = {
   sections: Section[];
