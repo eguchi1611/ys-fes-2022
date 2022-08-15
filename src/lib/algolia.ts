@@ -37,6 +37,7 @@ const getSearchObjects = async () => {
           title: section.title,
           subtitle: section.subtitle,
           description: section.description,
+          page: page,
         }));
       }
 

@@ -1,5 +1,6 @@
 import algoliasearch from "algoliasearch";
 import "instantsearch.css/themes/satellite-min.css";
+import Link from "next/link";
 import {
   Configure,
   Hits,
@@ -26,10 +27,24 @@ export default function Search() {
 }
 
 function Hit({ hit }: any) {
+  const pages: {
+    [key: string]: string;
+  } = {
+    HS_CLUB: "/highschool/club",
+    HS_1st: "/highschool/1st",
+    HS_2nd: "/highschool/2nd",
+    HS_3rd: "/highschool/3rd",
+    JHS_CLUB: "/juniorhighschool/club",
+  };
+
+  const url = pages[hit.page as string] + "#" + hit.title || "/";
+
   return (
-    <article>
-      <p className="my-0">{hit.title}</p>
-      <p className="my-0">{hit.description}</p>
-    </article>
+    <Link href={url} scroll={false}>
+      <article className="cursor-pointer" data-bs-dismiss="modal">
+        <p className="my-0">{hit.title}</p>
+        <p className="my-0">{hit.description}</p>
+      </article>
+    </Link>
   );
 }
