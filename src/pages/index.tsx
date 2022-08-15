@@ -1,8 +1,9 @@
 import classNames from "classnames";
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import Card from "../components/card";
 import Welcome from "../components/welcome";
+import { generateIndex } from "../lib/algolia";
 import style from "../styles/index.module.scss";
 
 const sections: Section[] = [
@@ -75,3 +76,10 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export const getStaticProps: GetStaticProps = async () => {
+  await generateIndex();
+  return {
+    props: {},
+  };
+};

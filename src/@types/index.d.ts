@@ -16,3 +16,8 @@ type LocalURL = {
   text: string;
   url: string;
 };
+
+type CMSResponse<T> = {
+  error: boolean;
+  data: T;
+};

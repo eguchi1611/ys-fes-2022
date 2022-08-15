@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Search from "./Search";
 
 function Header() {
   return (
@@ -54,6 +55,16 @@ function Header() {
               </Link>
             </li>
           </ul>
+          <form className="d-flex" role="search">
+            <input
+              role="button"
+              data-bs-toggle="modal"
+              data-bs-target="#searchModal"
+              className="form-control me-2"
+              type="search"
+              placeholder="検索"
+            />
+          </form>
         </div>
       </nav>
     </header>
