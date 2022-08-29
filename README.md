@@ -1,34 +1,27 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 八千代松陰文化祭ウェブサイト 2022 年度
 
-## Getting Started
+一時的に公開してます。
 
-First, run the development server:
+## 使い方
+
+環境変数を設定してから実行してください
 
 ```bash
-npm run dev
-# or
-yarn dev
+npm build & npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 環境変数
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+以下を設定してください
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- ALGOLIA_ADMIN_API_KEY
+- NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY
+- NEXT_PUBLIC_ALGOLIA_INDEX
+- NEXT_PUBLIC_ALGOLIA_APPLICATION_ID
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## CMS のソース
 
-## Learn More
+以下からアクセスできます。
+Google Apps Script で実行しています。
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+https://gist.github.com/kk79it/00e6706262ba9f5069e46624cdce2dba
