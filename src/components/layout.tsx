@@ -5,7 +5,7 @@ import style from "../styles/layout.module.scss";
 import Chat from "./chat";
 import Footer from "./footer";
 import Header from "./header";
-import SearchModal from "./search-modal";
+import SearchModal from "./search_modal";
 const SeishunRabbit = dynamic(() => import("./rabbit"), { ssr: false });
 
 function WrappedRabbit() {
