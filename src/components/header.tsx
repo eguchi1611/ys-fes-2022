@@ -62,6 +62,7 @@ function Header() {
               className="form-control me-2"
               type="search"
               placeholder="検索"
+              readOnly
             />
           </form>
         </div>
