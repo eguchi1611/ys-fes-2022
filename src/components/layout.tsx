@@ -2,11 +2,11 @@ import classNames from "classnames";
 import dynamic from "next/dynamic";
 import { ReactElement } from "react";
 import style from "../styles/layout.module.scss";
-import Chat from "./chat";
+import Chat from "./chatbot/chat";
 import Footer from "./footer";
 import Header from "./header";
-import SearchModal from "./search_modal";
-const SeishunRabbit = dynamic(() => import("./rabbit"), { ssr: false });
+import SearchModal from "./search/search_modal";
+const SeishunRabbit = dynamic(() => import("./chatbot/rabbit"), { ssr: false });
 
 function WrappedRabbit() {
   return (

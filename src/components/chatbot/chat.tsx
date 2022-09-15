@@ -2,7 +2,7 @@ import axios from "axios";
 import classNames from "classnames";
 import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
-import style from "../styles/chat.module.scss";
+import style from "../../styles/chat.module.scss";
 
 function Chat() {
   const [messages, setMessages] = useState<Message[]>([]);
