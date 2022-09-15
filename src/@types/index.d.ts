@@ -1,5 +1,5 @@
 type Section = {
-  title?: string;
+  title: string;
   subtitle?: string;
   description?: string;
   bannerUrl?: string;

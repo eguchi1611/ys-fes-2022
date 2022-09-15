@@ -33,11 +33,7 @@ function Chat() {
     addMessage({ content: data.text, sender: "request" });
 
     axios
-      .get(
-        `https://shoin-cloud.net/cfes-qa/v1/send/?text=${encodeURIComponent(
-          data.text
-        )}`
-      )
+      .get(`https://shoin-cloud.net/cfes-qa/v1/send/?text=${encodeURIComponent(data.text)}`)
       .then((res) => {
         const reply = res.status === 200 ? res.data : "わかんないよ〜！";
         addMessage({ content: reply, sender: "response" });
@@ -76,11 +72,7 @@ function Chat() {
         <div className="modal-content">
           <div className="modal-header">
             <h5 className="modal-title"></h5>
-            <button
-              type="button"
-              className="btn-close"
-              data-bs-dismiss="modal"
-            ></button>
+            <button type="button" className="btn-close" data-bs-dismiss="modal"></button>
           </div>
           <div className="modal-body" ref={chatWindowRef}>
             <div className={style.chat}>
@@ -91,14 +83,7 @@ function Chat() {
                     "flex-row-reverse": sender === "request",
                   })}
                 >
-                  {sender === "request" || (
-                    <img
-                      className={style.rabbit}
-                      src="/images/rabbits/walking1.png"
-                      height={42}
-                      alt="青春ラビット"
-                    />
-                  )}
+                  {sender === "request" || <img className={style.rabbit} src="/images/rabbits/walking1.png" height={42} alt="青春ラビット" />}
                   <p
                     className={classNames("rounded-3", style.message, {
                       ["text-end"]: sender === "request",
@@ -113,17 +98,8 @@ function Chat() {
             </div>
           </div>
           <div className="modal-footer">
-            <form
-              className="input-group input-group-sm"
-              onSubmit={handleSubmit(onSubmit)}
-            >
-              <input
-                type="text"
-                className="form-control"
-                placeholder="知りたいことを入力してください"
-                autoComplete="off"
-                {...register("text")}
-              />
+            <form className="input-group input-group-sm" onSubmit={handleSubmit(onSubmit)}>
+              <input type="text" className="form-control" placeholder="知りたいことを入力してください" autoComplete="off" {...register("text")} />
               <button className="btn btn-outline-secondary" type="submit">
                 送信
               </button>

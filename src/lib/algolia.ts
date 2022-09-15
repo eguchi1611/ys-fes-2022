@@ -16,8 +16,6 @@ export const generateIndex = async (): Promise<void> => {
       autoGenerateObjectIDIfNotExist: true,
     })
     .catch(console.error);
-
-  console.log(res);
 };
 
 const getSearchObjects = async () => {
