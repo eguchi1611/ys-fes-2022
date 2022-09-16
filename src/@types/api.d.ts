@@ -3,3 +3,9 @@ type APIResponse = {
   errorMessage?: string;
   data: Section[];
 };
+
+type MasterResponse = {
+  error: boolean;
+  errorMessage?: string;
+  data: Master[];
+};

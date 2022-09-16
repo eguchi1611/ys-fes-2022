@@ -10,18 +10,10 @@ function Header() {
             <Image src="/logo.png" height={36} width={64} alt="ロゴアイコン" />
           </a>
         </Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-        >
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div
-          className="collapse navbar-collapse flex-row-reverse"
-          id="navbarSupportedContent"
-        >
+        <div className="collapse navbar-collapse flex-row-reverse" id="navbarSupportedContent">
           <ul className="navbar-nav mb-2 mb-lg-0">
             <li className="nav-item">
               <Link href="/" passHref>
@@ -55,15 +47,7 @@ function Header() {
             </li>
           </ul>
           <form className="d-flex" role="search">
-            <input
-              role="button"
-              data-bs-toggle="modal"
-              data-bs-target="#searchModal"
-              className="form-control me-2"
-              type="search"
-              placeholder="検索"
-              readOnly
-            />
+            <input role="button" data-bs-toggle="modal" data-bs-target="#searchModal" className="form-control me-2" type="search" placeholder="検索" readOnly />
           </form>
         </div>
       </nav>
