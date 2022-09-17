@@ -2,12 +2,26 @@ import classNames from "classnames";
 import { useScroll } from "../hooks/scroll";
 import style from "../styles/welcome.module.scss";
 
-const imageSet = ["/images/backgrounds/DSC_0162.jpg", "/images/backgrounds/DSC_0198.jpg", "/images/backgrounds/DSC_0891.jpg", "/images/backgrounds/DSC_0908.jpg", "/images/backgrounds/DSC_7562.jpg"];
+const imageSet = [
+  "/images/backgrounds/DSC_0162.jpg",
+  "/images/backgrounds/DSC_0198.jpg",
+  "/images/backgrounds/DSC_0891.jpg",
+  "/images/backgrounds/DSC_0908.jpg",
+  "/images/backgrounds/DSC_7562.jpg",
+];
 
 function Text() {
   return (
-    <svg className={style.svg} version="1.1" viewBox="0 0 263.92 50.502" xmlns="http://www.w3.org/2000/svg">
-      <g transform="translate(-13.694 -92.05)" aria-label="SHOIN FESTIVAL 2022青春を取り戻せ！ 　～今こそみんなで一つに～">
+    <svg
+      className={style.svg}
+      version="1.1"
+      viewBox="0 0 263.92 50.502"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g
+        transform="translate(-13.694 -92.05)"
+        aria-label="SHOIN FESTIVAL 2022青春を取り戻せ！ 　～今こそみんなで一つに～"
+      >
         <path d="m20.51 100.55c0.09031 0.0903 0.18062 0.31609 0.29351 0.65476 0.24836 0.65475 0.22578 1.5804 0.04515 2.8222-0.04515 0.29351-0.27093 0.51929-0.65476 0.67734-0.38382 0.11289-0.99342 0.2032-1.8062 0.22577-1.6256 0.0452-1.6482 0.0903-2.4836-0.47413-0.83538-0.56444-0.90311-1.1515-0.90311-1.5353 0-0.2032-0.02258-0.33867-0.04516-0.4064-0.09031-0.15804-0.63218-0.38382-0.8128-0.4064-0.18062-0.0226-0.2032 0.0226-0.31609 0.22578-0.2032 0.38382-0.18062 0.76764 0.11289 1.1515 0.56444 0.72249 2.7996 2.1223 3.4544 2.3029 0.65476 0.18062 2.89 0.0226 3.7931-0.24835 0.90311-0.2032 2.2804-1.1063 2.7093-1.6256 0.42898-0.51929 0.38382-1.445-0.09031-2.2804-0.47413-0.83538-2.6416-1.8288-4.3575-2.0772-1.7159-0.24836-1.4224-0.18062-1.603-1.6256-0.18062-1.445 0.42898-2.4158 1.0386-2.89 0.29351-0.24836 0.4064-0.45156 0.33867-0.63218-0.02258-0.09031 0-0.15804 0.06773-0.22578 0.06773-0.06773 0.22578-0.09031 0.42898-0.11289 0.97085-0.15804 1.8062-0.02258 2.5061 0.45156 0.83538 0.56444 0.88053 0.13547 0.45156-0.24836-0.2032-0.18062-0.56444-0.38382-1.0837-0.63218-0.88054-0.51929-2.2804-0.56444-4.2446-0.13547-1.1515 0.24836-1.5353 0.58702-2.0772 1.3321-0.92569 1.2644-0.31609 3.5447 1.1515 4.4252 0.79022 0.47413 3.0028 1.1515 3.5447 1.1515 0.27093 0 0.45156 0.0452 0.54187 0.13547z" />
         <path d="m36.754 98.024c-1.6256 0.24836-3.8834 0.51929-6.7508 0.76764l0.18062-5.938c-0.51929-0.36124-0.99342-0.51929-1.4224-0.49671-0.42898 0.02258-0.65476 0.09031-0.72249 0.18062-0.06773 0.09031 0 0.2032 0.18062 0.31609 0.18062 0.11289 0.31609 0.2032 0.38382 0.27093 0.06773 0.06773 0.02258 0.06773-0.11289 0-0.56444-0.29351-0.83538-0.38382-0.85796-0.29351-0.18062 0.33867-0.42898 5.7122-0.31609 7.8797 0.11289 2.1675 0.49671 4.6059 1.016 5.0123 0.42898 0.33866 0.72249 0.36124 0.83538 0.0677 0.06773-0.15804 0.31609-0.2032 0.79022-0.13547 0.8128 0.2032 0.94827-0.27093 0.69991-0.92569-0.24836-0.65475-0.72249-3.8382-0.6096-5.2832 1.3772 0.06773 3.5673-0.11289 6.5927-0.51929v5.3509c0.04516 0.0226 0.15804 0.11289 0.31609 0.22578l0.45156 0.31609c0.13547 0.0903 0.22578 0.13546 0.29351 0.11288 0.06773-0.0226 0.09031-0.83537 0.11289-2.461l0.06773-5.4864c0.02258-2.032 0.02258-3.206 0-3.4996-0.04516-0.6096-0.6096-0.94827-0.79022-0.94827-0.09031 0-0.13547 0.27093-0.13547 0.8128s-0.06773 2.0997-0.2032 4.6736z" />
         <path d="m43.243 101.12c0.65476 1.2869 1.8514 2.6416 2.9125 3.1835 1.0612 0.54186 3.0028 0.69991 4.6059 0.4064s2.3932-1.1063 3.048-2.6642c0.65476-1.5579 0.63218-1.603 0.63218-3.5221 0-0.97084-0.09031-1.6933-0.29351-2.2126-0.4064-1.016-2.2352-2.9577-4.222-3.4318-1.9868-0.47413-3.2738 0.29351-5.1477 2.0997-1.874 1.8062-1.9868 2.2578-1.9868 3.906 0 0.83538 0.15804 1.5804 0.45156 2.2352zm8.8053-3.6576c0.31609 1.4901 0.15804 3.048-0.49671 4.6962-0.67733 1.7159-0.85796 1.8514-3.2286 1.8514h-0.29351c-0.8128 0-1.3095-0.0226-1.5127-0.13547-0.13547-0.11289-0.24836-0.38382-0.33867-0.79022-0.09031-0.40641-0.13547-0.63218-0.15804-0.67734-0.51929-2.1675-0.24836-5.0348 0.67733-6.9314 0.45156-1.0837 0.76764-1.2644 1.9643-1.6256 1.1966-0.36124 1.3095-0.22578 1.8514 0.38382 0.54187 0.6096 1.3547 2.3481 1.5353 3.2286z" />
@@ -60,21 +74,46 @@ function Welcome() {
       })}
     >
       <div className={style.fullscreen}>
-        <div id="WelcomeCarousel" className="carousel slide" data-bs-ride="carousel">
+        <div
+          id="WelcomeCarousel"
+          className="carousel slide"
+          data-bs-ride="carousel"
+        >
           <div className="carousel-indicators">
             {imageSet.map((src, index) => (
-              <button key={src} type="button" data-bs-target="#WelcomeCarousel" data-bs-slide-to={index.toString()} className={classNames({ active: index === 0 })}></button>
+              <button
+                key={src}
+                type="button"
+                data-bs-target="#WelcomeCarousel"
+                data-bs-slide-to={index.toString()}
+                className={classNames({ active: index === 0 })}
+              ></button>
             ))}
           </div>
           <div className="carousel-inner">
             {imageSet.map((src, index) => (
-              <div key={src} className={classNames("carousel-item", { active: index === 0 })}>
-                <img src={src} className="d-block w-100" alt="バックグラウンド" />
+              <div
+                key={src}
+                className={classNames("carousel-item", { active: index === 0 })}
+              >
+                <img
+                  src={src}
+                  className="d-block w-100"
+                  alt="バックグラウンド"
+                />
               </div>
             ))}
           </div>
-          <button className="carousel-control-prev" type="button" data-bs-target="#WelcomeCarousel" data-bs-slide="prev">
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+          <button
+            className="carousel-control-prev"
+            type="button"
+            data-bs-target="#WelcomeCarousel"
+            data-bs-slide="prev"
+          >
+            <span
+              className="carousel-control-prev-icon"
+              aria-hidden="true"
+            ></span>
             <span className="visually-hidden">Previous</span>
           </button>
           <button
@@ -84,12 +123,18 @@ function Welcome() {
 "
             data-bs-slide="next"
           >
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span
+              className="carousel-control-next-icon"
+              aria-hidden="true"
+            ></span>
             <span className="visually-hidden">Next</span>
           </button>
         </div>
       </div>
-      <div className={classNames("bg-black", style.fullscreen)} style={{ opacity: Math.min(scroll, 0.5) }}></div>
+      <div
+        className={classNames("bg-black", style.fullscreen)}
+        style={{ opacity: Math.min(scroll, 0.5) }}
+      ></div>
       <div className={classNames(style.cover, style.fullscreen)} />
       <Text />
     </div>

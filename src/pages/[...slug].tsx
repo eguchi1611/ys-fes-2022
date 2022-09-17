@@ -40,7 +40,11 @@ function MainPage({ master, sections }: Props) {
       <Head>
         <title>{master.title}</title>
       </Head>
-      {master.videoDisabled || <div className="text-center py-5">動画の公開は終了しました。ご視聴ありがとうございました。</div>}
+      {master.videoDisabled || (
+        <div className="text-center py-5">
+          動画の公開は終了しました。ご視聴ありがとうございました。
+        </div>
+      )}
       <div className="row row-cols-1 row-cols-lg-2">
         {sections.map((section) => (
           <div className="col" key={section.title}>
@@ -69,7 +73,9 @@ type Query = {
 };
 
 export const getStaticProps: GetStaticProps<{}, Query> = async ({ params }) => {
-  const master = (await getMasters()).find(({ path }) => params?.slug.join("/") === path);
+  const master = (await getMasters()).find(
+    ({ path }) => params?.slug.join("/") === path
+  );
   if (!master) {
     throw new Error("マスターが見つかりませんでした。");
   }
@@ -85,7 +91,9 @@ export const getStaticProps: GetStaticProps<{}, Query> = async ({ params }) => {
 };
 
 async function getMasters(): Promise<Master[]> {
-  const response: AxiosResponse<MasterResponse> = await axios.get("https://script.google.com/macros/s/AKfycbz55o9jVBSWTqAGpTldPY-cq5hCv6YePQY3QW5vNoXseoVUXwUmQxpm2VY0dFa81ssA/exec?master=true");
+  const response: AxiosResponse<MasterResponse> = await axios.get(
+    "https://script.google.com/macros/s/AKfycbz55o9jVBSWTqAGpTldPY-cq5hCv6YePQY3QW5vNoXseoVUXwUmQxpm2VY0dFa81ssA/exec?master=true"
+  );
 
   const data = response.data;
 
@@ -96,7 +104,9 @@ async function getMasters(): Promise<Master[]> {
 }
 
 async function getContents(sheetId: string) {
-  const url = new URL("https://script.google.com/macros/s/AKfycbz55o9jVBSWTqAGpTldPY-cq5hCv6YePQY3QW5vNoXseoVUXwUmQxpm2VY0dFa81ssA/exec");
+  const url = new URL(
+    "https://script.google.com/macros/s/AKfycbz55o9jVBSWTqAGpTldPY-cq5hCv6YePQY3QW5vNoXseoVUXwUmQxpm2VY0dFa81ssA/exec"
+  );
   url.searchParams.set("sheet", sheetId);
   const res: AxiosResponse<APIResponse> = await axios.get(url.toString());
   const data = res.data;

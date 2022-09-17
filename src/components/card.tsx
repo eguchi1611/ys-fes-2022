@@ -10,11 +10,24 @@ type Props = HTMLAttributes<HTMLDivElement> & {
 
 function Card({ section, ...rest }: Props) {
   return (
-    <div className={classNames(style.container, "container-fluid font-serif mb-4 d-flex")} {...rest}>
+    <div
+      className={classNames(
+        style.container,
+        "container-fluid font-serif mb-4 d-flex"
+      )}
+      {...rest}
+    >
       <div className={classNames(style.description, "flex-grow-1")}>
         <div className={classNames(style.title, "mt-4 mb-3")}>
           <div className="py-4">
-            <h2 className={classNames("fs-6 text-muted mb-0 ms-1 text-truncate", style.subtitle)}>{section.subtitle}</h2>
+            <h2
+              className={classNames(
+                "fs-6 text-muted mb-0 ms-1 text-truncate",
+                style.subtitle
+              )}
+            >
+              {section.subtitle}
+            </h2>
             <h1 className="fs-2 mb-0 lh-1 text-truncate">{section.title}</h1>
           </div>
         </div>
@@ -33,7 +46,9 @@ function Card({ section, ...rest }: Props) {
                     {movie.title}
                   </a>
                 ) : (
-                  <span className="text-decoration-line-through">{movie.title}</span>
+                  <span className="text-decoration-line-through">
+                    {movie.title}
+                  </span>
                 )}
               </li>
             ))}
@@ -42,7 +57,15 @@ function Card({ section, ...rest }: Props) {
       </div>
       <div className={style.image}>
         <div className="shadow-sm bg-white">
-          <Image src={section.bannerUrl || "/images/banners/blank.jpg"} width={1080} height={1920} layout="responsive" className="rounded" alt={`${section.title}のサムネイル`} priority />
+          <Image
+            src={section.bannerUrl || "/images/banners/blank.jpg"}
+            width={1080}
+            height={1920}
+            layout="responsive"
+            className="rounded"
+            alt={`${section.title}のサムネイル`}
+            priority
+          />
         </div>
       </div>
     </div>
