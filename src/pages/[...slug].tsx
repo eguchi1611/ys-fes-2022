@@ -22,10 +22,7 @@ function MainPage({ master, sections }: Props) {
 
       const elem = document.querySelector(`[data-name='${hash}']`);
       elem?.scrollIntoView({ behavior: "smooth", block: "center" });
-      console.log("scroll");
     };
-
-    console.log("run: " + decodeURIComponent(router.asPath));
 
     handler(router.asPath);
 

@@ -1,6 +1,4 @@
 import classNames from "classnames";
-import Image from "next/image";
-import { useEffect, useState } from "react";
 import { useScroll } from "../hooks/scroll";
 import style from "../styles/welcome.module.scss";
 
@@ -55,19 +53,6 @@ function Text() {
 function Welcome() {
   const scroll = useScroll();
 
-  const [background, setBackground] = useState(imageSet[0]);
-
-  useEffect(() => {
-    const change = () => {
-      setBackground(imageSet[Math.floor(Math.random() * imageSet.length)]);
-    };
-    change();
-    const timer = setInterval(change, 5 * 1000);
-    return () => {
-      clearInterval(timer);
-    };
-  }, []);
-
   return (
     <div
       className={classNames("position-relative h-screen", {
@@ -75,10 +60,36 @@ function Welcome() {
       })}
     >
       <div className={style.fullscreen}>
-        <Image src={background} layout="fill" objectFit="cover" alt="背景" />z
+        <div id="WelcomeCarousel" className="carousel slide" data-bs-ride="carousel">
+          <div className="carousel-indicators">
+            {imageSet.map((src, index) => (
+              <button key={src} type="button" data-bs-target="#WelcomeCarousel" data-bs-slide-to={index.toString()} className={classNames({ active: index === 0 })}></button>
+            ))}
+          </div>
+          <div className="carousel-inner">
+            {imageSet.map((src, index) => (
+              <div key={src} className={classNames("carousel-item", { active: index === 0 })}>
+                <img src={src} className="d-block w-100" alt="バックグラウンド" />
+              </div>
+            ))}
+          </div>
+          <button className="carousel-control-prev" type="button" data-bs-target="#WelcomeCarousel" data-bs-slide="prev">
+            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span className="visually-hidden">Previous</span>
+          </button>
+          <button
+            className="carousel-control-next"
+            type="button"
+            data-bs-target="#WelcomeCarousel
+"
+            data-bs-slide="next"
+          >
+            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span className="visually-hidden">Next</span>
+          </button>
+        </div>
       </div>
       <div className={classNames("bg-black", style.fullscreen)} style={{ opacity: Math.min(scroll, 0.5) }}></div>
-      {/* <div className={style.message}>SCROLL</div> */}
       <div className={classNames(style.cover, style.fullscreen)} />
       <Text />
     </div>

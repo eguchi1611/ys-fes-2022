@@ -5,16 +5,8 @@ import style from "../styles/layout.module.scss";
 import Chat from "./chatbot/chat";
 import Footer from "./footer";
 import Header from "./header";
-import SearchModal from "./search/search_modal";
+import SearchModal from "./search/search-modal";
 const SeishunRabbit = dynamic(() => import("./chatbot/rabbit"), { ssr: false });
-
-function WrappedRabbit() {
-  return (
-    <div data-bs-toggle="modal" data-bs-target="#chatModal">
-      <SeishunRabbit />
-    </div>
-  );
-}
 
 type Props = {
   children: ReactElement;
@@ -29,7 +21,9 @@ function Layout({ children }: Props) {
         <Footer />
       </div>
       <div className={classNames("position-fixed bottom-0 end-0", style.rabbit)}>
-        <WrappedRabbit />
+        <div data-bs-toggle="modal" data-bs-target="#chatModal">
+          <SeishunRabbit />
+        </div>
       </div>
       <Chat />
       <SearchModal />
