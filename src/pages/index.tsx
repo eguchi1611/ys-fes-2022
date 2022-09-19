@@ -78,6 +78,8 @@ const Home: NextPage = () => {
 export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
+  if (process.env.NODE_ENV === "production") {
+  }
   await generateIndex();
   return {
     props: {},
