@@ -63,6 +63,7 @@ function Header() {
               type="search"
               placeholder="検索"
               readOnly
+              style={{ width: 200 }}
             />
           </form>
         </div>
