@@ -79,8 +79,8 @@ export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
   if (process.env.NODE_ENV === "production") {
+    await generateIndex();
   }
-  await generateIndex();
   return {
     props: {},
   };

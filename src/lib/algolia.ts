@@ -41,37 +41,5 @@ const getSearchObjects = async () => {
     )
     .flat(1);
 
-  console.log(JSON.stringify(objects));
-
   return objects;
-
-  // const sheetUrl =
-  //   "https://script.google.com/macros/s/AKfycbz55o9jVBSWTqAGpTldPY-cq5hCv6YePQY3QW5vNoXseoVUXwUmQxpm2VY0dFa81ssA/exec";
-
-  // const pageObjects = await Promise.all(
-  //   pages.map(async (page) => {
-  //     const res0: AxiosResponse<CMSResponse<Section[]>> = await axios.get(
-  //       `${sheetUrl}?sheet=${page}`
-  //     );
-  //     const res = res0.data;
-  //     if (res.error === false) {
-  //       const sections = res.data;
-  //       return sections.map((section) => ({
-  //         objectID: page + "~" + section.title,
-  //         title: section.title,
-  //         subtitle: section.subtitle,
-  //         description: section.description,
-  //         page: page,
-  //       }));
-  //     }
-
-  //     return [];
-  //   })
-  // );
-
-  // const objects = pageObjects.reduce((previous, current) =>
-  //   previous.concat(current)
-  // );
-
-  return [];
 };
