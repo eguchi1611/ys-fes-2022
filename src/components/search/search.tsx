@@ -1,11 +1,19 @@
 import algoliasearch from "algoliasearch";
 import "instantsearch.css/themes/satellite-min.css";
 import Link from "next/link";
-import { Configure, Hits, InstantSearch, SearchBox } from "react-instantsearch-hooks-web";
+import {
+  Configure,
+  Hits,
+  InstantSearch,
+  SearchBox,
+} from "react-instantsearch-hooks-web";
 import { UrlObject } from "url";
 
 export default function Search() {
-  const searchClient = algoliasearch(process.env.NEXT_PUBLIC_ALGOLIA_APPLICATION_ID || "", process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY || "");
+  const searchClient = algoliasearch(
+    process.env.NEXT_PUBLIC_ALGOLIA_APPLICATION_ID || "",
+    process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY || ""
+  );
 
   const indexName = process.env.NEXT_PUBLIC_ALGOLIA_INDEX || "";
   return (
@@ -19,18 +27,12 @@ export default function Search() {
   );
 }
 
-function Hit({ hit }: any) {
-  const pages: {
-    [key: string]: string;
-  } = {
-    HS_CLUB: "/highschool/club",
-    HS_1st: "/highschool/1st",
-    HS_2nd: "/highschool/2nd",
-    HS_3rd: "/highschool/3rd",
-    JHS_CLUB: "/juniorhighschool/club",
-  };
+type HitProps = {
+  hit: Hit;
+};
 
-  const url: UrlObject = { pathname: pages[hit.page as string], hash: hit.title };
+function Hit({ hit }: HitProps) {
+  const url: UrlObject = { pathname: hit.path, hash: hit.title };
 
   return (
     <Link href={url} scroll={false}>

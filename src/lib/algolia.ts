@@ -1,8 +1,7 @@
 import algoliasearch from "algoliasearch";
-import axios, { AxiosResponse } from "axios";
 import { getContents, getMasters } from "./sheet";
 
-export const generateIndex = async (): Promise<void> => {
+export const generateIndex = async () => {
   // CMSからインデックスを取得
   const objects = await getSearchObjects();
 
@@ -12,7 +11,7 @@ export const generateIndex = async (): Promise<void> => {
     process.env.ALGOLIA_ADMIN_API_KEY || ""
   );
   const index = client.initIndex(process.env.NEXT_PUBLIC_ALGOLIA_INDEX || "");
-  const res = await index
+  return await index
     .saveObjects(objects, {
       autoGenerateObjectIDIfNotExist: true,
     })
@@ -28,13 +27,13 @@ const getSearchObjects = async () => {
     }))
   );
 
-  const objects = sections
+  const objects: Hit[] = sections
     .map(({ master, contents }) =>
       contents.map((section) => ({
         objectID: master.id + "/" + section.title,
         title: section.title,
-        subtitle: section.subtitle,
-        description: section.description,
+        subtitle: section.subtitle || "",
+        description: section.description || "",
         page: master.title,
         path: master.path,
       }))
