@@ -1,3 +1,4 @@
+import { MultipleQueriesQuery } from "@algolia/client-search";
 import algoliasearch from "algoliasearch";
 import "instantsearch.css/themes/satellite-min.css";
 import Link from "next/link";
@@ -10,10 +11,24 @@ import {
 import { UrlObject } from "url";
 
 export default function Search() {
-  const searchClient = algoliasearch(
+  const algoliaClient = algoliasearch(
     process.env.NEXT_PUBLIC_ALGOLIA_APPLICATION_ID || "",
     process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY || ""
   );
+
+  // 検索結果なしのモック情報
+  const mock = {
+    hits: [],
+    nbHits: 0,
+    nbPages: 0,
+    page: 0,
+    processingTimeMS: 0,
+  };
+
+  // 空文字の場合は何もない情報をモックして渡す
+  const searchClient = {
+    ...algoliaClient,
+  };
 
   const indexName = process.env.NEXT_PUBLIC_ALGOLIA_INDEX || "";
   return (

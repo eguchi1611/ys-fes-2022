@@ -1,4 +1,3 @@
-import axios, { AxiosResponse } from "axios";
 import classNames from "classnames";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
