@@ -98,7 +98,7 @@ function Welcome() {
               >
                 <img
                   src={src}
-                  className="d-block w-100"
+                  className={classNames("d-block w-100 h-screen", style.bg)}
                   alt="バックグラウンド"
                 />
               </div>
